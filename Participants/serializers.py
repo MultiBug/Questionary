@@ -5,7 +5,7 @@ from Participants.models import Participants
 class ParticipantsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participants
-        fields = ('id', 'vin', 'user')
+        fields = ('id')
 
 
 class ParticipantsDetailSerializer(serializers.ModelSerializer):

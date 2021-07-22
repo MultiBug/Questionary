@@ -4,15 +4,21 @@ User = get_user_model()
 
 
 class Participants(models.Model):
-    vin = models.CharField(verbose_name='VIN', db_index=True, unique=True, max_length=64)
-    color = models.CharField(verbose_name='Цвет', max_length=64)
-    brand = models.CharField(verbose_name='Брэнд', max_length=64)
-    car_types = (
-        (1, 'Седан'),
-        (2, 'Хэчбек'),
-        (3, 'Универсал'),
-        (4, 'Купе'),
+    fullname = models.CharField(verbose_name='Ф.И.О.', max_length=128)
+    sex_status = (
+        (1, 'Мужской'),
+        (2, 'Женский'),
+        (3, 'Неопределенный'),
     )
-    car_type = models.IntegerField(verbose_name='Кузов', choices=car_types)
+    sex = models.IntegerField(verbose_name='Пол', choices=sex_status)
+    marital_status = (
+        (1, 'Замужем / Женат'),
+        (2, 'Не замужем / Не женат'),
+        (3, 'Раздельное проживание'),
+        (4, 'Разведен(а)'),
+        (5, 'Вдовец / Вдова'),
+    )
+    marital = models.IntegerField(verbose_name='Семейное Положение', choices=marital_status)
+    nationality = models.CharField(verbose_name='Национальность', max_length=64)
     user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
 
