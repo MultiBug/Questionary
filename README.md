@@ -10,3 +10,5 @@ http://127.0.0.1:8000/api/v1/base-auth/logout
 http://127.0.0.1:8000/api/v1/participants/participants/create не работает
 
 http://127.0.0.1:8000/api/v1/participants/participants/detail/{id}    {id} - id записи   не работает
+
+http://127.0.0.1:8000/api/v1/auth/users/  - работает
